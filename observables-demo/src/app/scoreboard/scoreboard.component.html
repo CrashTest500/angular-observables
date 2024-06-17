@@ -1,0 +1,37 @@
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            Home Team
+                        </h3>
+
+                        <p class="card-text score-text">
+                            {{ (scoreboard$ | async)?.homeScore ?? 0 }}
+                        </p>
+                        
+                        <button type="button" class="btn btn-outline-danger btn-lg" (click)="updateHomeTeam(-1)"
+                            [disabled]="(scoreboard$ | async)?.homeScore === 0">-1</button>
+                        <button type="button" class="btn btn-outline-success btn-lg" (click)="updateHomeTeam(1)">+1</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            Away Team
+                        </h3>
+                        <p class="card-text score-text">
+                            {{ (scoreboard$ | async)?.awayScore ?? 0 }}
+                        </p>
+
+                        <button type="button" class="btn btn-outline-danger btn-lg" (click)="updateAwayTeam(-1)"
+                            [disabled]="(scoreboard$ | async)?.awayScore === 0">-1</button>
+                        <button type="button" class="btn btn-outline-success btn-lg" (click)="updateAwayTeam(1)">+1</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
