@@ -24,4 +24,9 @@ export class ScoreboardService {
 
     this._scoreboard.next(scoreboardLocal);
   }
+
+  resetScore() {
+    const scoreboard: Scoreboard = { homeScore: 0, awayScore: 0 };
+    this._scoreboard.next(scoreboard); 
+  }
 }
