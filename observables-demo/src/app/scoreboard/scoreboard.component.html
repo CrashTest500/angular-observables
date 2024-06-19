@@ -1,8 +1,8 @@
 <div>
     <div class="row text-center">
         <div class="col">
-            <button (click)="resetScore()">
-                <i class="bi bi-arrow-clockwise"></i>
+            <button class="btn" (click)="resetScore()">
+                <i class="bi bi-arrow-clockwise refresh-icon"></i>
             </button>
         </div>
     </div>
@@ -20,7 +20,7 @@
                             {{ homeScore }}
                         </p>
                         
-                        <button type="button" class="btn btn-outline-danger btn-lg" (click)="updateHomeTeam(-1)"
+                        <button type="button" class="btn btn-outline-danger btn-lg score-button" (click)="updateHomeTeam(-1)"
                             [disabled]="homeScore === 0">-1</button>
                         <button type="button" class="btn btn-outline-success btn-lg" (click)="updateHomeTeam(1)">+1</button>
                     </div>
